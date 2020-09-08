@@ -1,0 +1,9 @@
+companies:
+  -
+    id: 1
+    name: huanhuan
+    age: 30
+  -
+    id: 2
+    name: xixi
+    age: 1
