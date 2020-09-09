@@ -30,3 +30,7 @@ class TestCacl:
     @pytest.mark.parametrize(["a","b"],[(1,0)])
     def test_div_except(self,a,b):
         raise ZeroDivisionError
+
+
+if __name__ == '__main__':
+    TestCacl()
