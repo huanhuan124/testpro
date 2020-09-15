@@ -2,8 +2,52 @@ import  selenium
 from selenium import webdriver
 
 
-def test_selenium():
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 
-    driver = webdriver.Chrome()
-    # driver = webdriver.Chrome("/Users/zenghuan/software/chromedriver")
-    driver.get("https://www.baidu.com/")
+__author__ = 'zenghuan'
+
+from selenium import webdriver
+
+class TestSelenium:
+    def setup(self):
+        self.driver = webdriver.Chrome()
+        self.driver.maximize_window()
+        # self.driver.get("https://www.baidu.com/")
+        #隐式等待
+        self.driver.implicitly_wait(5)
+
+    def teardown(self):
+        self.driver.quit()
+
+    def test_selenium(self):
+        self.driver.get("https://testerhome.com/")
+        # time.sleep(1)
+        self.driver.find_element_by_link_text("社团").click()
+        #直接等待
+        # time.sleep(1)
+        #显示等待
+        # def wait(x):
+        #     return len(self.driver.find_elements(By.XPATH,'//*[@class="media-heading"]')) >= 1
+        # WebDriverWait(self.driver,10).until(wait)
+
+
+        self.driver.find_element_by_link_text("求职面试圈").click()
+        # time.sleep(1)
+        print("hello,succ")
+
+    def testElementByID(self):
+        self.driver.get("https://www.baidu.com/")
+        self.driver.find_element(By.ID,"kw").send_keys("霍格沃兹学院")
+        self.driver.find_element(By.ID,"su").click()
+
+    def testElementByXPATH(self):
+        self.driver.get("https://www.baidu.com/")
+        self.driver.find_element(By.XPATH,'//*[@id="kw"]').send_keys("霍格沃兹学院")
+        self.driver.find_element(By.XPATH,'//*[@id="su"]').click()
+
+    def testElementByCssSelector(self):
+        self.driver.get("https://www.baidu.com/")
+        self.driver.find_element(By.CSS_SELECTOR,"#kw").send_keys("霍格沃兹学院")
+        self.driver.find_element(By.CSS_SELECTOR,"#su").click()
