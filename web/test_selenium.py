@@ -1,10 +1,4 @@
-import  selenium
-from selenium import webdriver
-
-
-import time
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 
 __author__ = 'zenghuan'
 
@@ -22,7 +16,7 @@ class TestSelenium:
         self.driver.quit()
 
     def test_selenium(self):
-        self.driver.get("https://testerhome.com/")
+        self.driver.get("https://www.testerhome.com/")
         # time.sleep(1)
         self.driver.find_element_by_link_text("社团").click()
         #直接等待
@@ -51,3 +45,14 @@ class TestSelenium:
         self.driver.get("https://www.baidu.com/")
         self.driver.find_element(By.CSS_SELECTOR,"#kw").send_keys("霍格沃兹学院")
         self.driver.find_element(By.CSS_SELECTOR,"#su").click()
+
+
+    # def test_po_hgwz(self):
+    #     main = Test_main()
+    #
+    #     main.sendkeys()
+    #     time.sleep(2)
+    #     main.click_first_link()
+    #     time.sleep(3)
+    #     main.click_first_link().get_text()
+    #     time.sleep(2)
