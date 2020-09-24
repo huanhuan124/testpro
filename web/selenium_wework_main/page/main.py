@@ -18,5 +18,6 @@ class Main:
 
     def goto_addmember(self):
         sleep(2)
+        #点击添加成员
         self._driver.find_element(By.CSS_SELECTOR,'.index_service_cnt_itemWrap:nth-child(1)').click()
         return Addmember(self._driver)

@@ -15,8 +15,9 @@ class Addmember:
 
         self._driver.find_element_by_id("memberAdd_acctid").send_keys("a125")
         self._driver.find_element_by_id("memberAdd_phone").send_keys("13100001113")
+        #点击保存
         self._driver.find_element_by_xpath('//*[@id="js_contacts54"]/div/div[2]/div/div[4]/div/form/div[3]/a[2]').click()
-        # self._driver.find_element_by_css_selector("js_btn_save").click()
+        # self._driver.find_element_by_css_selector(".js_btn_save").click()
         sleep(2)
         # return True
 
